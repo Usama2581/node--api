@@ -3,12 +3,16 @@ const app = express()
 const io = require('socket.io')
 const db = require('./config/db')
 const cors = require('cors')
+const port = process.env.PORT || 4000;
+
+
+
 
 app.use(cors())
 
-app.listen(3001, () => {
-    console.log('Server is running at port 3001');
-});
+app.listen(port, () => {
+    console.log(`server is running at port ${port}`)
+})
 
 
 db.connection
